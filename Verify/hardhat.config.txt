@@ -1,0 +1,69 @@
+///mainnet
+import { HardhatUserConfig } from "hardhat/config";
+import "@nomicfoundation/hardhat-toolbox";
+
+/** @type import('hardhat/config').HardhatUserConfig */
+const config: HardhatUserConfig = {
+  solidity: "0.8.28",
+  networks: {
+    Viction: {
+      url: "https://rpc.viction.xyz", // for mainnet
+      accounts: ['']
+    }
+  },
+
+  etherscan: {
+    apiKey: {
+      goerli: "",
+      Viction: "tomoscan2023",
+    },
+    customChains: [
+      {
+        network: "Viction",
+        chainId: 88, // for mainnet
+        urls: {
+          apiURL: "https://www.vicscan.xyz/api/contract/hardhat/verify", // for mainnet
+          browserURL: "https://vicscan.xyz", // for mainnet
+        }
+      }
+    ]
+  }
+};
+
+export default config;
+
+///Testnet
+import { HardhatUserConfig } from "hardhat/config";
+import "@nomicfoundation/hardhat-toolbox";
+
+/** @type import('hardhat/config').HardhatUserConfig */
+const config: HardhatUserConfig = {
+  solidity: "0.8.28",
+  networks: {
+    Viction: {
+      url: "https://rpc-testnet.viction.xyz", // for testnet
+      accounts: ['']
+    }
+  },
+
+  etherscan: {
+    apiKey: {
+      goerli: "",
+      Viction: "tomoscan2023",
+    },
+    customChains: [
+      {
+        network: "victiontestnet",
+        chainId: 89, // for testnet
+        urls: {
+          apiURL: "https://scan-api-testnet.viction.xyz/api/contract/hardhat/verify", // for testnet
+          browserURL: "https://www.testnet.vicscan.xyz", // for testnet
+        }
+      }
+    ]
+  }
+};
+
+export default config;
+
+lưu ý chạy lệnh verify: npx hardhat verify --network Tobe 0xdfC9AE4A94e4a147cB5A67A59E3750475620a99C
