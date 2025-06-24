@@ -67,3 +67,6 @@ const config: HardhatUserConfig = {
 export default config;
 
 lưu ý chạy lệnh verify: npx hardhat verify --network Tobe 0xdfC9AE4A94e4a147cB5A67A59E3750475620a99C
+đỏi code phải: npx hardhat compile
+deploy: npx hardhat run scripts/deploy.ts --network tomo-testnet
+verify: npx hardhat verify --network Tobe 0x8174ef3940e6f4639b4aaC3075e2C84Cb811e1ED
